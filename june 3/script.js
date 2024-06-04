@@ -26,7 +26,9 @@ const num = [1, 7, 9, 45];
 const names = ["str", "alex", "moh"];
 const the = ['the', 'fox', 'over', 'lazy', 'dog'];
 console.log (num, names, the);
-
+console.log (num[num.length-1])
+let w = num.indexOf(9);
+console.log(w)
 /*
 2
 What the index of "Banana","Tomato"
@@ -107,7 +109,12 @@ Sample array : var arr1 = [ -3, 8, 7, 6, 5, -4, 3, 2, 1 ];
 Sample Output : -4,-3,1,2,3,5,6,7,8
 */
 var arr1 = [ -3, 8, 7, 6, 5, -4, 3, 2, 1 ];
-arr1 = arr1.map(value => value + 4);
-arr1.sort()
-arr1 = arr1.map(value => value - 4);
+arr1 = arr1.map(value => value + 4);  -4 +100 = 96
+arr1.sort() // 0,1,10,11,12,5,6,7 90
+
+// arr1 = arr1.map(value => value - 4);  96-100 =-4
+// -4, -3,6, ,.....
+
+
+///// +100 , -100
 console.log(arr1)
