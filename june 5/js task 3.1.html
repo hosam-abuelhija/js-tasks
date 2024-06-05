@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mouseover Event Listener</title>
+  <style>
+    Div {
+      width: 400px;
+      height: 50px;
+      background-color: rgb(255, 242, 0);
+      text-align: center;
+    }
+    p{
+      font-size: larger;
+      padding-top: 10px;
+    
+    }
+  </style>
+</head>
+<body>
+  <div id="Div">
+    <p id="gg">Can I Help You?</p>
+  </div>
+
+  <script>
+    document.getElementById('gg').addEventListener('mouseover', function() {
+      document.getElementById('gg').innerHTML = "HELLO WORLD!";
+    });
+    
+    document.getElementById('gg').addEventListener('mouseleave', function() {
+      document.getElementById('gg').innerHTML = "Can I Help You?";
+    });
+  </script>
+</body>
+</html>

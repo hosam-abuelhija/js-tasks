@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change Event Listener</title>
+  </head>
+  <body>
+    <select name="select" id="mySelect" onclick="flag(this.value)">
+      <option value="61ZQ4ucXRJL.jpg">JORDAN</option>
+      <option value="510F3M5LpoL._AC_UF894,1000_QL80_.jpg">PALESTINE</option>
+    </select>
+    <br />
+    <img src="61ZQ4ucXRJL.jpg" width="250px" ; height="150px" ; class="gg" />
+
+    <script>
+     const x = document.querySelector(".gg")
+     function flag(value){
+      x.src=value;
+
+     }
+    </script>
+  </body>
+</html>
