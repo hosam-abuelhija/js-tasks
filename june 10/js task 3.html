@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>document</title>
+    <style>
+      #song-lest {
+        list-style-type: none;
+        padding: 0;
+        border: solid #b8b8b8 4px;
+      }
+      #song-lest li {
+        padding: 10px;
+        border: solid #e8e5e5;
+      }
+      #song-lest li:last-child {
+        border-bottom: none;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="song-text-field" />
+    <button id="add-song-button">Add song</button>
+    <ul id="song-lest"></ul>
+    <script>
+      let song_lest = document.getElementById("song-lest");
+      let song_text_field = document.getElementById("song-text-field");
+      let song_array = localStorage.song_array;
+      if (song_array) song_array = JSON.parse(song_array);
+      else song_array = [];
+      song_array.forEach((element) => {
+        addSong(element);
+      });
+      document
+        .getElementById("add-song-button")
+        .addEventListener("click", () => {
+          addSong(song_text_field.value);
+          song_array.push(song_text_field.value);
+          song_text_field.value = "";
+        });
+
+      function addSong(value) {
+        let new_song = document.createElement("li");
+        new_song.innerText = value;
+        song_lest.appendChild(new_song);
+      }
+    </script>
+  </body>
+</html>

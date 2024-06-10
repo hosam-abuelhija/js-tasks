@@ -109,7 +109,7 @@ Sample array : var arr1 = [ -3, 8, 7, 6, 5, -4, 3, 2, 1 ];
 Sample Output : -4,-3,1,2,3,5,6,7,8
 */
 var arr1 = [ -3, 8, 7, 6, 5, -4, 3, 2, 1 ];
-arr1 = arr1.map(value => value + 4);  -4 +100 = 96
+arr1 = arr1.map(value => value + 4); // -4 +100 = 96
 arr1.sort() // 0,1,10,11,12,5,6,7 90
 
 // arr1 = arr1.map(value => value - 4);  96-100 =-4

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>document</title>
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+        background: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box" onclick="bgcolor()" ></div>
+    <script>
+
+        const x = document.querySelector(".box")
+     function bgcolor(){
+        x.style.background = "red";
+     }
+     
+    </script>
+  </body>
+</html>
