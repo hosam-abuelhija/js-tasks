@@ -3,43 +3,70 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Change Event Listener</title>
+    <title>catsndogs</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      .gg {
+        width: 250px;
+        height: 175px;
+        border: solid 2px;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 200px;
+      }
+    </style>
   </head>
   <body>
-    <select name="select" id="mySelect" onclick="catsndogs(this.value)">
-      <option id="op1"></option>
-      <option id="op2"></option>
-      <option id="op3"></option>
-      <option id="op4"></option>
-    </select>
-    <br><br>
-    <img src="2024-06-11 16 26 18.jpg" width="250px" ; height="200px" ; class="gg" />
+    <select
+      name="select"
+      id="mySelect"
+      class="form-select"
+      aria-label="Default select example"
+      style="
+        width: 200px;
+        color: rgb(11, 44, 76);
+        background-color: rgb(117, 186, 255);"
+      onclick="catsndogs(this.value)"
+    ></select>
+    <br /><br />
+    <img class="gg"/>
 
     <script>
-    const url = "https://66681676f53957909ff67af8.mockapi.io/users/Animals"
-        
-        async function getData(){
-            const response = await fetch(url);
-            const jsonData = await response.json();
-            console.log("getData" ,jsonData);
-            
-                 document.getElementById("op1").innerText = jsonData[0].name;
-                 document.getElementById("op2").innerText = jsonData[1].name;
-                 document.getElementById("op3").innerText = jsonData[2].name;
-                 document.getElementById("op4").innerText = jsonData[3].name;
-                 document.getElementById("op1").value = jsonData[0].image;
-                 document.getElementById("op2").value = jsonData[1].image;
-                 document.getElementById("op3").value = jsonData[2].image;
-                 document.getElementById("op4").value = jsonData[3].image;
-                 
+      const url = "https://66681676f53957909ff67af8.mockapi.io/users/Animals";
+
+      async function getData() {
+        const response = await fetch(url);
+        const jsonData = await response.json();
+        // console.log("getData" ,jsonData);
+
+        document.getElementsByClassName("gg")[0].src = jsonData[0].image;
+
+        for (i = 0; i < jsonData.length; i++) {
+          const op = document.createElement("option");
+          op.innerText = jsonData[i].name;
+          op.value = jsonData[i].image;
+          document.getElementById("mySelect").appendChild(op);
         }
+      }
       getData();
 
-       const x = document.querySelector(".gg")
-     function catsndogs(value){
-      x.src=value;
-     }
-
+      const x = document.querySelector(".gg");
+      function catsndogs(value) {
+        x.src = value;
+      }
     </script>
   </body>
 </html>
